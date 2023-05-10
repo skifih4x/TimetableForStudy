@@ -63,9 +63,14 @@ final class OptionScheduleTableViewController: UITableViewController {
         }
         case [1,0]: alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name lesson")
         case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of building ")
+        case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of  building ")
         case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-        default: print("erro")
+        case [2,0]:
+            let teachers = TeachersViewController()
+            navigationController?.pushViewController(teachers, animated: true)
+        case [3,0]: let colors = ScheduleColorViewController()
+            navigationController?.pushViewController(colors, animated: true)
+        default: print("Tap Option table view")
         }
     }
 }
