@@ -25,7 +25,10 @@
 		006CBAB52A0C22EE00380833 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAB42A0C22EE00380833 /* AlertForCellName.swift */; };
 		006CBAB72A0C2B5200380833 /* ScheduleColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAB62A0C2B5200380833 /* ScheduleColorViewController.swift */; };
 		006CBAB92A0C2B6E00380833 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAB82A0C2B6E00380833 /* TeachersViewController.swift */; };
-		006CBABB2A0C357C00380833 /* ColorScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBABA2A0C357C00380833 /* ColorScheduleTableViewCell.swift */; };
+		006CBABB2A0C357C00380833 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBABA2A0C357C00380833 /* ColorTableViewCell.swift */; };
+		006CBABD2A0C377400380833 /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBABC2A0C377400380833 /* TaskOptionTableView.swift */; };
+		006CBABF2A0C38A400380833 /* OptionTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBABE2A0C38A400380833 /* OptionTaskTableViewCell.swift */; };
+		006CBAC12A0C3BE400380833 /* ColorTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAC02A0C3BE400380833 /* ColorTaskTableViewController.swift */; };
 		007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C162A0A87CF00383ACB /* AppDelegate.swift */; };
 		007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C182A0A87CF00383ACB /* SceneDelegate.swift */; };
 		007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C1A2A0A87CF00383ACB /* MainTabBarController.swift */; };
@@ -51,7 +54,10 @@
 		006CBAB42A0C22EE00380833 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
 		006CBAB62A0C2B5200380833 /* ScheduleColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorViewController.swift; sourceTree = "<group>"; };
 		006CBAB82A0C2B6E00380833 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
-		006CBABA2A0C357C00380833 /* ColorScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		006CBABA2A0C357C00380833 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		006CBABC2A0C377400380833 /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
+		006CBABE2A0C38A400380833 /* OptionTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTaskTableViewCell.swift; sourceTree = "<group>"; };
+		006CBAC02A0C3BE400380833 /* ColorTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTaskTableViewController.swift; sourceTree = "<group>"; };
 		007A8C132A0A87CF00383ACB /* TimetableForStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimetableForStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A8C162A0A87CF00383ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007A8C182A0A87CF00383ACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				006CBAAD2A0BECAF00380833 /* HeaderOptionTableViewCell.swift */,
+				006CBABA2A0C357C00380833 /* ColorTableViewCell.swift */,
 				006CBAA82A0BE4DB00380833 /* Schedule */,
 				006CBAA92A0BE4E300380833 /* Tasks */,
 				006CBAAA2A0BE4EC00380833 /* Contacts */,
@@ -133,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				006CBA862A0A8FE400380833 /* TasksViewController.swift */,
+				006CBABC2A0C377400380833 /* TaskOptionTableView.swift */,
+				006CBAC02A0C3BE400380833 /* ColorTaskTableViewController.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -151,7 +160,6 @@
 			children = (
 				006CBA8F2A0AA54700380833 /* ScheduleTableViewCell.swift */,
 				006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */,
-				006CBABA2A0C357C00380833 /* ColorScheduleTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				006CBA9C2A0AEEFB00380833 /* TasksTableViewCell.swift */,
+				006CBABE2A0C38A400380833 /* OptionTaskTableViewCell.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -318,16 +327,19 @@
 			files = (
 				006CBAB12A0C04AB00380833 /* AlertDate.swift in Sources */,
 				006CBA9B2A0ADC3C00380833 /* UIFont + Extension.swift in Sources */,
-				006CBABB2A0C357C00380833 /* ColorScheduleTableViewCell.swift in Sources */,
+				006CBABB2A0C357C00380833 /* ColorTableViewCell.swift in Sources */,
+				006CBABD2A0C377400380833 /* TaskOptionTableView.swift in Sources */,
 				007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */,
 				006CBA902A0AA54700380833 /* ScheduleTableViewCell.swift in Sources */,
 				007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */,
 				006CBAB92A0C2B6E00380833 /* TeachersViewController.swift in Sources */,
 				006CBAB52A0C22EE00380833 /* AlertForCellName.swift in Sources */,
 				006CBA872A0A8FE400380833 /* TasksViewController.swift in Sources */,
+				006CBABF2A0C38A400380833 /* OptionTaskTableViewCell.swift in Sources */,
 				007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */,
 				006CBA852A0A8FD800380833 /* ScheduleViewController.swift in Sources */,
 				006CBAB32A0C1AE700380833 /* AlertTime.swift in Sources */,
+				006CBAC12A0C3BE400380833 /* ColorTaskTableViewController.swift in Sources */,
 				006CBAAE2A0BECAF00380833 /* HeaderOptionTableViewCell.swift in Sources */,
 				006CBA992A0AD98900380833 /* UILabel + Extension.swift in Sources */,
 				006CBA892A0A8FF200380833 /* ContactsViewController.swift in Sources */,
