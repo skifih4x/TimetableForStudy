@@ -50,4 +50,15 @@ final class OptionScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? OptionScheduleTableViewCell else { return }
+        switch indexPath {
+        case [0,0]: alertDate(label: cell.nameCellLabel) { numberWeekday, date in
+            print(numberWeekday, date)
+        }
+        default: print("erro")
+        }
+    }
 }

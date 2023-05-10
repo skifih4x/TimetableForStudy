@@ -20,6 +20,7 @@
 		006CBAA42A0BE25800380833 /* OptionScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAA32A0BE25800380833 /* OptionScheduleTableViewController.swift */; };
 		006CBAAC2A0BE50B00380833 /* OptionScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */; };
 		006CBAAE2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAAD2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift */; };
+		006CBAB12A0C04AB00380833 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAB02A0C04AB00380833 /* AlertDate.swift */; };
 		007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C162A0A87CF00383ACB /* AppDelegate.swift */; };
 		007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C182A0A87CF00383ACB /* SceneDelegate.swift */; };
 		007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C1A2A0A87CF00383ACB /* MainTabBarController.swift */; };
@@ -40,6 +41,7 @@
 		006CBAA32A0BE25800380833 /* OptionScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScheduleTableViewController.swift; sourceTree = "<group>"; };
 		006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		006CBAAD2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		006CBAB02A0C04AB00380833 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		007A8C132A0A87CF00383ACB /* TimetableForStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimetableForStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A8C162A0A87CF00383ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007A8C182A0A87CF00383ACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		006CBA8D2A0AA52200380833 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				006CBAAF2A0C049A00380833 /* Alert */,
 				006CBA8E2A0AA52E00380833 /* Cell */,
 			);
 			path = Model;
@@ -153,6 +156,14 @@
 			children = (
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		006CBAAF2A0C049A00380833 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				006CBAB02A0C04AB00380833 /* AlertDate.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		007A8C0A2A0A87CF00383ACB = {
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006CBAB12A0C04AB00380833 /* AlertDate.swift in Sources */,
 				006CBA9B2A0ADC3C00380833 /* UIFont + Extension.swift in Sources */,
 				007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */,
 				006CBA902A0AA54700380833 /* ScheduleTableViewCell.swift in Sources */,
