@@ -12,11 +12,11 @@ final class ScheduleTableViewCell: UITableViewCell {
     private let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
     private let teacherName = UILabel(text: "Атон Атон Атоновический", font: .avenirNext20(), aligment: .right)
     private let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
-    private let typeLabel = UILabel(text: "Тип:", font: .avenirNext14())
+    private let typeLabel = UILabel(text: "Type:", font: .avenirNext14())
     private let lessonType = UILabel(text: "Лекция", font: .avenirNextDemiBold14())
-    private let buildingLabel = UILabel(text: "Корпус:", font: .avenirNext14(), aligment: .right)
+    private let buildingLabel = UILabel(text: "Building:", font: .avenirNext14(), aligment: .right)
     private let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
-    private let audLabel = UILabel(text: "Аудитория:", font: .avenirNext14(), aligment: .right)
+    private let audLabel = UILabel(text: "Audience:", font: .avenirNext14(), aligment: .right)
     private let lessonAud = UILabel(text: "101", font: .avenirNextDemiBold14())
     
     private lazy var topStackView = UIStackView(

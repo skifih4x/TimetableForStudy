@@ -17,9 +17,12 @@
 		006CBA9B2A0ADC3C00380833 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBA9A2A0ADC3C00380833 /* UIFont + Extension.swift */; };
 		006CBA9D2A0AEEFB00380833 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBA9C2A0AEEFB00380833 /* TasksTableViewCell.swift */; };
 		006CBAA02A0AF23700380833 /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBA9F2A0AF23700380833 /* PressButtonProtocols.swift */; };
+		006CBAA42A0BE25800380833 /* OptionScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAA32A0BE25800380833 /* OptionScheduleTableViewController.swift */; };
+		006CBAAC2A0BE50B00380833 /* OptionScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */; };
+		006CBAAE2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBAAD2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift */; };
 		007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C162A0A87CF00383ACB /* AppDelegate.swift */; };
 		007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C182A0A87CF00383ACB /* SceneDelegate.swift */; };
-		007A8C1B2A0A87CF00383ACB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C1A2A0A87CF00383ACB /* TabBarController.swift */; };
+		007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007A8C1A2A0A87CF00383ACB /* MainTabBarController.swift */; };
 		007A8C202A0A87D000383ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007A8C1F2A0A87D000383ACB /* Assets.xcassets */; };
 		007A8C232A0A87D000383ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007A8C212A0A87D000383ACB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -34,10 +37,13 @@
 		006CBA9A2A0ADC3C00380833 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		006CBA9C2A0AEEFB00380833 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		006CBA9F2A0AF23700380833 /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
+		006CBAA32A0BE25800380833 /* OptionScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScheduleTableViewController.swift; sourceTree = "<group>"; };
+		006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		006CBAAD2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		007A8C132A0A87CF00383ACB /* TimetableForStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimetableForStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007A8C162A0A87CF00383ACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		007A8C182A0A87CF00383ACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		007A8C1A2A0A87CF00383ACB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		007A8C1A2A0A87CF00383ACB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		007A8C1F2A0A87D000383ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		007A8C222A0A87D000383ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		007A8C242A0A87D000383ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +72,9 @@
 		006CBA8E2A0AA52E00380833 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				006CBA8F2A0AA54700380833 /* ScheduleTableViewCell.swift */,
-				006CBA9C2A0AEEFB00380833 /* TasksTableViewCell.swift */,
+				006CBAA82A0BE4DB00380833 /* Schedule */,
+				006CBAA92A0BE4E300380833 /* Tasks */,
+				006CBAAA2A0BE4EC00380833 /* Contacts */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -96,6 +103,56 @@
 				006CBA9F2A0AF23700380833 /* PressButtonProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		006CBAA52A0BE26600380833 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				006CBA842A0A8FD800380833 /* ScheduleViewController.swift */,
+				006CBAA32A0BE25800380833 /* OptionScheduleTableViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		006CBAA62A0BE27D00380833 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				006CBA862A0A8FE400380833 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		006CBAA72A0BE29100380833 /* Contancts */ = {
+			isa = PBXGroup;
+			children = (
+				006CBA882A0A8FF200380833 /* ContactsViewController.swift */,
+			);
+			path = Contancts;
+			sourceTree = "<group>";
+		};
+		006CBAA82A0BE4DB00380833 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				006CBA8F2A0AA54700380833 /* ScheduleTableViewCell.swift */,
+				006CBAAB2A0BE50B00380833 /* OptionScheduleTableViewCell.swift */,
+				006CBAAD2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		006CBAA92A0BE4E300380833 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				006CBA9C2A0AEEFB00380833 /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		006CBAAA2A0BE4EC00380833 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		007A8C0A2A0A87CF00383ACB = {
@@ -139,10 +196,10 @@
 		007A8C2B2A0A8DEE00383ACB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				007A8C1A2A0A87CF00383ACB /* TabBarController.swift */,
-				006CBA842A0A8FD800380833 /* ScheduleViewController.swift */,
-				006CBA862A0A8FE400380833 /* TasksViewController.swift */,
-				006CBA882A0A8FF200380833 /* ContactsViewController.swift */,
+				007A8C1A2A0A87CF00383ACB /* MainTabBarController.swift */,
+				006CBAA52A0BE26600380833 /* Schedule */,
+				006CBAA62A0BE27D00380833 /* Tasks */,
+				006CBAA72A0BE29100380833 /* Contancts */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,17 +291,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				006CBA9B2A0ADC3C00380833 /* UIFont + Extension.swift in Sources */,
-				007A8C1B2A0A87CF00383ACB /* TabBarController.swift in Sources */,
+				007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */,
 				006CBA902A0AA54700380833 /* ScheduleTableViewCell.swift in Sources */,
 				007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */,
 				006CBA872A0A8FE400380833 /* TasksViewController.swift in Sources */,
 				007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */,
 				006CBA852A0A8FD800380833 /* ScheduleViewController.swift in Sources */,
+				006CBAAE2A0BECAF00380833 /* HeaderOptionScheduleTableViewCell.swift in Sources */,
 				006CBA992A0AD98900380833 /* UILabel + Extension.swift in Sources */,
 				006CBA892A0A8FF200380833 /* ContactsViewController.swift in Sources */,
+				006CBAAC2A0BE50B00380833 /* OptionScheduleTableViewCell.swift in Sources */,
 				006CBA942A0AABF900380833 /* UIStackView + Extension.swift in Sources */,
 				006CBA9D2A0AEEFB00380833 /* TasksTableViewCell.swift in Sources */,
 				006CBAA02A0AF23700380833 /* PressButtonProtocols.swift in Sources */,
+				006CBAA42A0BE25800380833 /* OptionScheduleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

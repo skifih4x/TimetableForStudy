@@ -49,9 +49,17 @@ class ScheduleViewController: UIViewController {
         
         calendar.scope = .week
         
-        showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
         constraints()
         swipeAction()
+        
+        showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+    
+    @objc func addButtonTapped() {
+        let sheduleOption = OptionScheduleTableViewController()
+        navigationController?.pushViewController(sheduleOption, animated: true)
     }
     
     @objc func showHideButtonTapped() {

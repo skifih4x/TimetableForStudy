@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  MainTabBarController.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 09.05.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
