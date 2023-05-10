@@ -12,13 +12,17 @@ final class OptionScheduleTableViewController: UITableViewController {
     let idOptionsScheduleCell = "idOptionsScheduleCell"
     let idOptionScheduleHeader = "idOptionScheduleHeader"
     
+    let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD" ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Option Schedule"
         tableView.register(OptionScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
-        tableView.register(HeaderOptionScheduleTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
+        tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,13 +46,9 @@ final class OptionScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as? HeaderOptionScheduleTableViewCell else { return UITableViewHeaderFooterView()}
-        header.headerConfigure(section: section)
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: idOptionScheduleHeader) as? HeaderOptionTableViewCell else { return UITableViewHeaderFooterView()}
+        header.headerConfigure(nameArray: headerNameArray, section: section)
         return header
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -65,12 +65,15 @@ final class OptionScheduleTableViewController: UITableViewController {
         case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
         case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of  building ")
         case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
-        case [2,0]:
-            let teachers = TeachersViewController()
-            navigationController?.pushViewController(teachers, animated: true)
-        case [3,0]: let colors = ScheduleColorViewController()
-            navigationController?.pushViewController(colors, animated: true)
+        case [2,0]: pushControllers(vc: TeachersViewController())
+        case [3,0]: pushControllers(vc: ScheduleColorViewController())
         default: print("Tap Option table view")
         }
+    }
+    
+    func pushControllers(vc: UIViewController) {
+        let viewController = vc
+        navigationController?.navigationBar.topItem?.title = "Options"
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
