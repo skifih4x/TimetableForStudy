@@ -1,5 +1,5 @@
 //
-//  AlertDate.swift
+//  AlertTime.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 10.05.2023.
@@ -9,30 +9,25 @@ import UIKit
 
 extension UIViewController {
     
-    func alertDate(label: UILabel, completion: @escaping (Int, NSDate) -> Void) {
+    func alertTime(label: UILabel, completion: @escaping (NSDate) -> Void) {
         
         let alert = UIAlertController(title: "", message: nil, preferredStyle: .actionSheet)
         
         let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .time
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = NSLocale(localeIdentifier: "Ru") as Locale
         
         alert.view.addSubview(datePicker)
         
         let ok = UIAlertAction(title: "OK", style: .default) { _ in
-            
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd.MM.yyyy"
-            let dateString = dateFormatter.string(from: datePicker.date)
+            dateFormatter.dateFormat = "HH:mm"
+            let timeString = dateFormatter.string(from: datePicker.date)
+            let timeSchedule = datePicker.date as NSDate
+            completion(timeSchedule)
             
-            let calendar = Calendar.current
-            let component = calendar.dateComponents([.weekday], from: datePicker.date)
-            guard let weakday = component.weekday else { return }
-            let numberWeekDay = weakday
-            let date = datePicker.date as NSDate
-            completion(numberWeekDay, date)
-            
-            label.text = dateString
+            label.text = timeString
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .default)
