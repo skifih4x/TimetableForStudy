@@ -7,14 +7,15 @@
 
 import UIKit
 
-final class OptionScheduleTableViewCell: UITableViewCell {
+final class OptionTableViewCell: UITableViewCell {
     
-    let backgroundViewCell: UIView = {
-       let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    let backgroundViewCell: UIImageView = {
+       let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.layer.cornerRadius = 10
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     let nameCellLabel: UILabel = {
@@ -34,12 +35,6 @@ final class OptionScheduleTableViewCell: UITableViewCell {
         return repeatSwitch
     }()
     
-    let cellNameArray = [["Date", "Time"],
-                         ["Name", "Type", "Building", "Audience"],
-                         ["Teacher Name"],
-                         [""],
-                         ["Repeat every 7 days"]]
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
@@ -56,8 +51,8 @@ final class OptionScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented") 
     }
     
-    func cellConfigure(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+    func cellScheduleConfigure(nameArray:[[String]],indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
         if indexPath == [3,0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
@@ -66,6 +61,20 @@ final class OptionScheduleTableViewCell: UITableViewCell {
         if indexPath == [4,0] {
             repeatSwitch.isHidden = false
         }
+    }
+    
+    func cellTasksConfigure(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath == [3,0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        }
+    }
+    
+    func cellContactConfigure(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
     }
     
     @objc func switchChange(paramTarger: UISwitch) {

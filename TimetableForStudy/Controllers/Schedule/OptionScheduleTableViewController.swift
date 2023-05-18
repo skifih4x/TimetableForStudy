@@ -14,10 +14,16 @@ final class OptionScheduleTableViewController: UITableViewController {
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD" ]
     
+    let cellNameArray = [["Date", "Time"],
+                         ["Name", "Type", "Building", "Audience"],
+                         ["Teacher Name"],
+                         [""],
+                         ["Repeat every 7 days"]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Option Schedule"
-        tableView.register(OptionScheduleTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
+        tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
@@ -40,8 +46,8 @@ final class OptionScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as? OptionScheduleTableViewCell else { return UITableViewCell()}
-        cell.cellConfigure(indexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as? OptionTableViewCell else { return UITableViewCell()}
+        cell.cellScheduleConfigure(nameArray: cellNameArray ,indexPath: indexPath)
         return cell
     }
     
@@ -53,7 +59,7 @@ final class OptionScheduleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? OptionScheduleTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? OptionTableViewCell else { return }
         switch indexPath {
         case [0,0]: alertDate(label: cell.nameCellLabel) { numberWeekday, date in
             print(numberWeekday, date)

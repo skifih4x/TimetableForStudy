@@ -14,15 +14,17 @@ final class TaskOptionTableView: UITableViewController {
     
     let headerNameArray = ["DATE", "LESSON", "TASK", "COLOR" ]
     
+    let cellNameArray = ["Date", "Lesson", "Task", ""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Option Tasks"
-        tableView.register(OptionTaskTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
+        tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionTasksHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
         tableView.bounces = false
-        tableView.showsVerticalScrollIndicator = false
+//        tableView.showsVerticalScrollIndicator = falseOptionTableViewCell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,8 +36,8 @@ final class TaskOptionTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as? OptionTaskTableViewCell else { return UITableViewCell()}
-        cell.cellConfigure(indexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as? OptionTableViewCell else { return UITableViewCell()}
+        cell.cellTasksConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }
     
@@ -47,7 +49,7 @@ final class TaskOptionTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? OptionTaskTableViewCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? OptionTableViewCell else { return }
         switch indexPath.section {
         case 0: alertDate(label: cell.nameCellLabel) { numberWeekday, date in
             print(numberWeekday, date)
