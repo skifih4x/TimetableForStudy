@@ -36,6 +36,7 @@
 		00B216472A16A4B7003ACC58 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216462A16A4B7003ACC58 /* ContactsTableViewCell.swift */; };
 		00B216492A16B5DF003ACC58 /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216482A16B5DF003ACC58 /* ContactOptionTableViewController.swift */; };
 		00B2164B2A16BA02003ACC58 /* AlertFrendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2164A2A16BA02003ACC58 /* AlertFrendOrTeacher.swift */; };
+		00B2164D2A16CCB5003ACC58 /* PhotoCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2164C2A16CCB5003ACC58 /* PhotoCameraAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		00B216462A16A4B7003ACC58 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		00B216482A16B5DF003ACC58 /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
 		00B2164A2A16BA02003ACC58 /* AlertFrendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFrendOrTeacher.swift; sourceTree = "<group>"; };
+		00B2164C2A16CCB5003ACC58 /* PhotoCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCameraAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				00B216442A16981D003ACC58 /* ContactsTableViewController.swift */,
+				00B216482A16B5DF003ACC58 /* ContactOptionTableViewController.swift */,
 				006CBAB82A0C2B6E00380833 /* TeachersViewController.swift */,
 			);
 			path = Contancts;
@@ -180,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				00B216462A16A4B7003ACC58 /* ContactsTableViewCell.swift */,
-				00B216482A16B5DF003ACC58 /* ContactOptionTableViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 				006CBAB22A0C1AE700380833 /* AlertTime.swift */,
 				006CBAB42A0C22EE00380833 /* AlertForCellName.swift */,
 				00B2164A2A16BA02003ACC58 /* AlertFrendOrTeacher.swift */,
+				00B2164C2A16CCB5003ACC58 /* PhotoCameraAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				00B216492A16B5DF003ACC58 /* ContactOptionTableViewController.swift in Sources */,
 				006CBAAC2A0BE50B00380833 /* OptionTableViewCell.swift in Sources */,
 				006CBA942A0AABF900380833 /* UIStackView + Extension.swift in Sources */,
+				00B2164D2A16CCB5003ACC58 /* PhotoCameraAlert.swift in Sources */,
 				006CBA9D2A0AEEFB00380833 /* TasksTableViewCell.swift in Sources */,
 				006CBAA02A0AF23700380833 /* PressButtonProtocols.swift in Sources */,
 				006CBAB72A0C2B5200380833 /* ScheduleColorViewController.swift in Sources */,
