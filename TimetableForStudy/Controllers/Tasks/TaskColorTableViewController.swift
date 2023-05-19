@@ -1,5 +1,5 @@
 //
-//  ColorTaskTableViewController.swift
+//  TaskColorTableViewController.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 10.05.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ColorTaskTableViewController: UITableViewController {
+final class TaskColorTableViewController: UITableViewController {
     
     let idTasksColorCell = "idTasksColorCell"
     let idTaskScheduleHeader = "idTaskScheduleHeader "
@@ -17,7 +17,7 @@ final class ColorTaskTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Color Tasks"
-        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
+        tableView.register(ColorыTableViewCell.self, forCellReuseIdentifier: idTasksColorCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idTaskScheduleHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
@@ -34,7 +34,7 @@ final class ColorTaskTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idTasksColorCell, for: indexPath) as? ColorTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idTasksColorCell, for: indexPath) as? ColorыTableViewCell else { return UITableViewCell()}
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }

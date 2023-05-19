@@ -7,17 +7,17 @@
 
 import UIKit
 
-final class ScheduleColorViewController: UITableViewController {
+final class ScheduleColorsViewController: UITableViewController {
     
-    let idOptionsColorCell = "idOptionsColorCell"
-    let idOptionScheduleHeader = "idOptionScheduleHeader"
+    private let idOptionsColorCell = "idOptionsColorCell"
+    private let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Color Schedule"
-        tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
+        title = "Colors Schedule"
+        tableView.register(ColorыTableViewCell.self, forCellReuseIdentifier: idOptionsColorCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
@@ -34,7 +34,7 @@ final class ScheduleColorViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as? ColorTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsColorCell, for: indexPath) as? ColorыTableViewCell else { return UITableViewCell()}
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }

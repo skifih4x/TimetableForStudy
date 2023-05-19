@@ -1,5 +1,5 @@
 //
-//  OptionScheduleTableViewController.swift
+//  ScheduleOptionTableViewController.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 10.05.2023.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class OptionScheduleTableViewController: UITableViewController {
+final class ScheduleOptionTableViewController: UITableViewController {
     
-    let idOptionsScheduleCell = "idOptionsScheduleCell"
-    let idOptionScheduleHeader = "idOptionScheduleHeader"
+    private let idOptionsScheduleCell = "idOptionsScheduleCell"
+    private let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD" ]
     
@@ -22,7 +22,7 @@ final class OptionScheduleTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Option Schedule"
+        title = "Options Schedule"
         tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: idOptionsScheduleCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
@@ -72,7 +72,7 @@ final class OptionScheduleTableViewController: UITableViewController {
         case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of  building ")
         case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
         case [2,0]: pushControllers(vc: TeachersViewController())
-        case [3,0]: pushControllers(vc: ScheduleColorViewController())
+        case [3,0]: pushControllers(vc: ScheduleColorsViewController())
         default: print("Tap Option table view")
         }
     }

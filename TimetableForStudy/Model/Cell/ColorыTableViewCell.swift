@@ -1,5 +1,5 @@
 //
-//  ColorTableViewCell.swift
+//  ColorыTableViewCell.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 10.05.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ColorTableViewCell: UITableViewCell {
+final class ColorыTableViewCell: UITableViewCell {
     
     let backgroundViewCell: UIView = {
        let view = UIView()

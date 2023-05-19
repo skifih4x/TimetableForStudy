@@ -1,5 +1,5 @@
 //
-//  TaskOptionTableView.swift
+//  TasksOptionTableView.swift
 //  TimetableForStudy
 //
 //  Created by Артем Орлов on 10.05.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TaskOptionTableView: UITableViewController {
+final class TasksOptionTableView: UITableViewController {
     
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionTasksHeader = "idOptionScheduleHeader"
@@ -56,7 +56,7 @@ final class TaskOptionTableView: UITableViewController {
         }
         case 1: alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name lesson")
         case 2: alertForCellName(label: cell.nameCellLabel, name: "Name Tesk", placeholder: "Enter name task")
-        case 3: pushControllers(vc: ColorTaskTableViewController())
+        case 3: pushControllers(vc: TaskColorTableViewController())
         default: print("Tap Option table view")
         }
     }

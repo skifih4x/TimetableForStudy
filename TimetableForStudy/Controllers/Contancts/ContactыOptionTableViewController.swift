@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class ContactOptionTableViewController: UITableViewController {
+final class ContactыOptionTableViewController: UITableViewController {
     
     let idOptionsContactCell = "idOptionsContactCell"
     let idOptionContactHeader = "idOptionScheduleHeader"
     
-    let headerNameArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE" ]
+    let headerNameArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
     
     let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
@@ -75,7 +75,7 @@ final class ContactOptionTableViewController: UITableViewController {
     }
 }
 
-extension ContactOptionTableViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ContactыOptionTableViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
@@ -90,7 +90,7 @@ extension ContactOptionTableViewController : UIImagePickerControllerDelegate, UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        guard let cell = tableView.cellForRow(at: [4, 0]) as? OptionTableViewCell else{ return }
+        guard let cell = tableView.cellForRow(at: [4, 0]) as? OptionTableViewCell else { return }
         cell.backgroundViewCell.image = info[.editedImage] as? UIImage
         cell.backgroundViewCell.contentMode = .scaleAspectFill
         cell.backgroundViewCell.clipsToBounds = true

@@ -27,7 +27,7 @@ final class ContactsTableViewController: UITableViewController {
     }
     
     @objc func addButtonTapped() {
-        let concatcOption = ContactOptionTableViewController()
+        let concatcOption = ContactыOptionTableViewController()
         navigationController?.pushViewController(concatcOption, animated: true)
     }
     
