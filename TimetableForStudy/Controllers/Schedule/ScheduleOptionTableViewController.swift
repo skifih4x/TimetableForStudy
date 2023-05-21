@@ -11,7 +11,7 @@ final class ScheduleOptionTableViewController: UITableViewController {
     
     private let idOptionsScheduleCell = "idOptionsScheduleCell"
     private let idOptionScheduleHeader = "idOptionScheduleHeader"
-    
+    private let scheduleModel = ScheduleModel()
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD" ]
     
     let cellNameArray = [["Date", "Time"],
@@ -29,6 +29,15 @@ final class ScheduleOptionTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        
+    }
+    
+    @objc private func saveButtonTapped() {
+        
+        RealmManager.shared.saveScheduleModel(model: scheduleModel)
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,6 +57,7 @@ final class ScheduleOptionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as? OptionTableViewCell else { return UITableViewCell()}
         cell.cellScheduleConfigure(nameArray: cellNameArray ,indexPath: indexPath)
+        cell.switchRepeatDelegate = self
         return cell
     }
     
@@ -61,16 +71,32 @@ final class ScheduleOptionTableViewController: UITableViewController {
         
         guard let cell = tableView.cellForRow(at: indexPath) as? OptionTableViewCell else { return }
         switch indexPath {
-        case [0,0]: alertDate(label: cell.nameCellLabel) { numberWeekday, date in
-            print(numberWeekday, date)
-        }
-        case [0,1]: alertTime(label: cell.nameCellLabel) { date in
-            print(date)
-        }
-        case [1,0]: alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name lesson")
-        case [1,1]: alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1,2]: alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of  building ")
-        case [1,3]: alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience")
+        case [0,0]:
+            alertDate(label: cell.nameCellLabel) { numberWeekday, date in
+                self.scheduleModel.scheduleDate = date
+                self.scheduleModel.scheduleWeekday = numberWeekday
+                print(self.scheduleModel)
+            }
+        case [0,1]:
+            alertTime(label: cell.nameCellLabel) { time in
+                self.scheduleModel.scheduleTime = time
+            }
+        case [1,0]:
+            alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name lesson") { text in
+                self.scheduleModel.scheduleName = text
+            }
+        case [1,1]:
+            alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson") { text in
+                self.scheduleModel.scheduleType = text
+            }
+        case [1,2]:
+            alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter number of  building ") { text in
+                self.scheduleModel.scheduleBuilding = text
+            }
+        case [1,3]:
+            alertForCellName(label: cell.nameCellLabel, name: "Audience number", placeholder: "Enter number of audience") { text in
+                self.scheduleModel.scheduleAudience = text
+            }
         case [2,0]: pushControllers(vc: TeachersViewController())
         case [3,0]: pushControllers(vc: ScheduleColorsViewController())
         default: print("Tap Option table view")
@@ -81,5 +107,12 @@ final class ScheduleOptionTableViewController: UITableViewController {
         let viewController = vc
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension ScheduleOptionTableViewController: SwitchRepeatProtocol {
+     
+    func switchRepeat(value: Bool) {
+        scheduleModel.scheduleRepeat = value
     }
 }

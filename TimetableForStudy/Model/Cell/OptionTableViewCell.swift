@@ -17,7 +17,7 @@ final class OptionTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+     
     let nameCellLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
@@ -34,6 +34,8 @@ final class OptionTableViewCell: UITableViewCell {
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
     }()
+    
+    weak var switchRepeatDelegate: SwitchRepeatProtocol?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -78,11 +80,7 @@ final class OptionTableViewCell: UITableViewCell {
     }
     
     @objc func switchChange(paramTarger: UISwitch) {
-        if paramTarger.isOn {
-            print("ON")
-        } else {
-            print("OFF")
-        }
+        switchRepeatDelegate?.switchRepeat(value: paramTarger.isOn)
     }
     
     func setConstraints() {

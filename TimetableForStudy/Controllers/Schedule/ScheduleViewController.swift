@@ -45,6 +45,7 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
         title = "Schedule"
         
         calendar.scope = .week

@@ -39,6 +39,9 @@
 		00B2164D2A16CCB5003ACC58 /* AlertPhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2164C2A16CCB5003ACC58 /* AlertPhotoCamera.swift */; };
 		00B216502A17C4BE003ACC58 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 00B2164F2A17C4BE003ACC58 /* Realm */; };
 		00B216522A17C4BE003ACC58 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00B216512A17C4BE003ACC58 /* RealmSwift */; };
+		00B216552A17D666003ACC58 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216542A17D666003ACC58 /* ScheduleModel.swift */; };
+		00B216582A17D868003ACC58 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216572A17D868003ACC58 /* RealmManager.swift */; };
+		00BF43E92A1A5D5B0065900C /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF43E82A1A5D5B0065900C /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,9 @@
 		00B216482A16B5DF003ACC58 /* ContactыOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactыOptionTableViewController.swift"; sourceTree = "<group>"; };
 		00B2164A2A16BA02003ACC58 /* AlertFrendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFrendOrTeacher.swift; sourceTree = "<group>"; };
 		00B2164C2A16CCB5003ACC58 /* AlertPhotoCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoCamera.swift; sourceTree = "<group>"; };
+		00B216542A17D666003ACC58 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		00B216572A17D868003ACC58 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		00BF43E82A1A5D5B0065900C /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +98,10 @@
 		006CBA8D2A0AA52200380833 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00B216532A17D65A003ACC58 /* Realm */,
 				006CBAAF2A0C049A00380833 /* Alert */,
 				006CBA8E2A0AA52E00380833 /* Cell */,
+				00B216562A17D802003ACC58 /* Services */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 				006CBA932A0AABF900380833 /* UIStackView + Extension.swift */,
 				006CBA982A0AD98900380833 /* UILabel + Extension.swift */,
 				006CBA9A2A0ADC3C00380833 /* UIFont + Extension.swift */,
+				00BF43E82A1A5D5B0065900C /* UIColor + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -262,6 +271,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		00B216532A17D65A003ACC58 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				00B216542A17D666003ACC58 /* ScheduleModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		00B216562A17D802003ACC58 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				00B216572A17D868003ACC58 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,11 +374,14 @@
 				006CBA902A0AA54700380833 /* ScheduleTableViewCell.swift in Sources */,
 				007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */,
 				006CBAB92A0C2B6E00380833 /* TeachersViewController.swift in Sources */,
+				00B216552A17D666003ACC58 /* ScheduleModel.swift in Sources */,
+				00BF43E92A1A5D5B0065900C /* UIColor + Extension.swift in Sources */,
 				00B2164B2A16BA02003ACC58 /* AlertFrendOrTeacher.swift in Sources */,
 				00B216472A16A4B7003ACC58 /* ContactsTableViewCell.swift in Sources */,
 				006CBAB52A0C22EE00380833 /* AlertForCellName.swift in Sources */,
 				006CBA872A0A8FE400380833 /* TasksViewController.swift in Sources */,
 				007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */,
+				00B216582A17D868003ACC58 /* RealmManager.swift in Sources */,
 				006CBA852A0A8FD800380833 /* ScheduleViewController.swift in Sources */,
 				006CBAB32A0C1AE700380833 /* AlertTime.swift in Sources */,
 				006CBAC12A0C3BE400380833 /* TaskColorTableViewController.swift in Sources */,
