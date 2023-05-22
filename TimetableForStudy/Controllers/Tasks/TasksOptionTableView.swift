@@ -24,7 +24,6 @@ final class TasksOptionTableView: UITableViewController {
         tableView.backgroundColor = #colorLiteral(red: 0.9594197869, green: 0.9599153399, blue: 0.975127399, alpha: 1)
         tableView.separatorStyle = .none
         tableView.bounces = false
-//        tableView.showsVerticalScrollIndicator = falseOptionTableViewCell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

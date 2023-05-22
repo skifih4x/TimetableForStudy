@@ -42,6 +42,7 @@
 		00B216552A17D666003ACC58 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216542A17D666003ACC58 /* ScheduleModel.swift */; };
 		00B216582A17D868003ACC58 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B216572A17D868003ACC58 /* RealmManager.swift */; };
 		00BF43E92A1A5D5B0065900C /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF43E82A1A5D5B0065900C /* UIColor + Extension.swift */; };
+		00BF43EB2A1A6DE70065900C /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF43EA2A1A6DE70065900C /* AlertOk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		00B216542A17D666003ACC58 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		00B216572A17D868003ACC58 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		00BF43E82A1A5D5B0065900C /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		00BF43EA2A1A6DE70065900C /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				006CBAB42A0C22EE00380833 /* AlertForCellName.swift */,
 				00B2164A2A16BA02003ACC58 /* AlertFrendOrTeacher.swift */,
 				00B2164C2A16CCB5003ACC58 /* AlertPhotoCamera.swift */,
+				00BF43EA2A1A6DE70065900C /* AlertOk.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				006CBABD2A0C377400380833 /* TasksOptionTableView.swift in Sources */,
 				007A8C1B2A0A87CF00383ACB /* MainTabBarController.swift in Sources */,
 				006CBA902A0AA54700380833 /* ScheduleTableViewCell.swift in Sources */,
+				00BF43EB2A1A6DE70065900C /* AlertOk.swift in Sources */,
 				007A8C172A0A87CF00383ACB /* AppDelegate.swift in Sources */,
 				006CBAB92A0C2B6E00380833 /* TeachersViewController.swift in Sources */,
 				00B216552A17D666003ACC58 /* ScheduleModel.swift in Sources */,

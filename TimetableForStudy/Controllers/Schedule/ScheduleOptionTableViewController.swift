@@ -11,7 +11,7 @@ final class ScheduleOptionTableViewController: UITableViewController {
     
     private let idOptionsScheduleCell = "idOptionsScheduleCell"
     private let idOptionScheduleHeader = "idOptionScheduleHeader"
-    private let scheduleModel = ScheduleModel()
+    private var scheduleModel = ScheduleModel()
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD" ]
     
     let cellNameArray = [["Date", "Time"],
@@ -19,6 +19,8 @@ final class ScheduleOptionTableViewController: UITableViewController {
                          ["Teacher Name"],
                          [""],
                          ["Repeat every 7 days"]]
+    
+    var hexColorCell =  "1A4766"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,12 @@ final class ScheduleOptionTableViewController: UITableViewController {
     
     @objc private func saveButtonTapped() {
         
+        scheduleModel.scheduleColor = hexColorCell
         RealmManager.shared.saveScheduleModel(model: scheduleModel)
-
+        scheduleModel = ScheduleModel()
+        alertOk(title: "Success")
+        hexColorCell =  "1A4766"
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,7 +62,7 @@ final class ScheduleOptionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsScheduleCell, for: indexPath) as? OptionTableViewCell else { return UITableViewCell()}
-        cell.cellScheduleConfigure(nameArray: cellNameArray ,indexPath: indexPath)
+        cell.cellScheduleConfigure(nameArray: cellNameArray ,indexPath: indexPath, hexColor: hexColorCell)
         cell.switchRepeatDelegate = self
         return cell
     }
@@ -107,6 +113,10 @@ final class ScheduleOptionTableViewController: UITableViewController {
         let viewController = vc
         navigationController?.navigationBar.topItem?.title = "Options"
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
     }
 }
 

@@ -29,7 +29,6 @@ final class OptionTableViewCell: UITableViewCell {
        let repeatSwitch = UISwitch()
         repeatSwitch.isOn = true
         repeatSwitch.isHidden = true
-        repeatSwitch.onTintColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         repeatSwitch.addTarget(self, action: #selector(switchChange(paramTarger:)), for: .valueChanged)
         repeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repeatSwitch
@@ -53,24 +52,19 @@ final class OptionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented") 
     }
     
-    func cellScheduleConfigure(nameArray:[[String]],indexPath: IndexPath) {
+    func cellScheduleConfigure(nameArray:[[String]],indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
+
+        let color = UIColor().colorFroxHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
         
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        }
-        
-        if indexPath == [4,0] {
-            repeatSwitch.isHidden = false
-        }
+        repeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
+        repeatSwitch.onTintColor = color
     }
     
     func cellTasksConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
-        
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-        }
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1) : .white )
     }
     
     func cellContactConfigure(nameArray: [String], indexPath: IndexPath) {
