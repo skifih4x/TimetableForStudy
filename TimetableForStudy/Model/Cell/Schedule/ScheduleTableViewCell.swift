@@ -9,15 +9,15 @@ import UIKit
 
 final class ScheduleTableViewCell: UITableViewCell {
 
-    private let lessonName = UILabel(text: "Программирование", font: .avenirNextDemiBold20())
-    private let teacherName = UILabel(text: "Атон Атон Атоновический", font: .avenirNext20(), aligment: .right)
-    private let lessonTime = UILabel(text: "08:00", font: .avenirNextDemiBold20())
+    private let lessonName = UILabel(text: "", font: .avenirNextDemiBold20())
+    private let teacherName = UILabel(text: "", font: .avenirNext20(), aligment: .right)
+    private let lessonTime = UILabel(text: "", font: .avenirNextDemiBold20())
     private let typeLabel = UILabel(text: "Type:", font: .avenirNext14())
-    private let lessonType = UILabel(text: "Лекция", font: .avenirNextDemiBold14())
+    private let lessonType = UILabel(text: "", font: .avenirNextDemiBold14())
     private let buildingLabel = UILabel(text: "Building:", font: .avenirNext14(), aligment: .right)
-    private let lessonBuilding = UILabel(text: "1", font: .avenirNextDemiBold14())
+    private let lessonBuilding = UILabel(text: "", font: .avenirNextDemiBold14())
     private let audLabel = UILabel(text: "Audience:", font: .avenirNext14(), aligment: .right)
-    private let lessonAud = UILabel(text: "101", font: .avenirNextDemiBold14())
+    private let lessonAud = UILabel(text: "", font: .avenirNextDemiBold14())
     
     private lazy var topStackView = UIStackView(
         arrangedSubviews: [lessonName, teacherName],
@@ -47,6 +47,19 @@ final class ScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(model: ScheduleModel) {
+        
+         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        lessonName.text = model.scheduleName
+        teacherName.text = model.scheduleTeacher
+        lessonTime.text = dateFormatter.string(from: model.scheduleTime)
+        lessonType.text = model.scheduleType
+        lessonBuilding.text = model.scheduleBuilding
+        lessonAud.text = model.scheduleAudience
+        backgroundColor = UIColor().colorFroxHex("\(model.scheduleColor)")
+    }
     func setConstraints() {
         
         self.addSubview(topStackView)
