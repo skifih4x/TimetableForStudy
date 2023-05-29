@@ -22,7 +22,7 @@ class ScheduleViewController: UIViewController {
     }()
     
     private let showHideButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("Open calendar", for: .normal)
         button.setTitleColor(.gray, for: .normal)
         button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 14)
@@ -43,6 +43,11 @@ class ScheduleViewController: UIViewController {
     private let idScheduleCell = "idScheduleCell"
     let localRealm = try! Realm()
     var scheduleArray: Results<ScheduleModel>?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         scheduleOnDay(date: Date())
@@ -140,6 +145,18 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingRow = scheduleArray?[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completion in
+            RealmManager.shared.deleteScheduleModel(model: editingRow!)
+            tableView.reloadData()
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
 

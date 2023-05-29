@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00197EB02A253D3F00C21C81 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00197EAF2A253D3F00C21C81 /* TaskModel.swift */; };
+		00197EB22A25426300C21C81 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00197EB12A25426300C21C81 /* ContactModel.swift */; };
 		006CBA852A0A8FD800380833 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBA842A0A8FD800380833 /* ScheduleViewController.swift */; };
 		006CBA872A0A8FE400380833 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006CBA862A0A8FE400380833 /* TasksViewController.swift */; };
 		006CBA8C2A0A94AD00380833 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 006CBA8B2A0A94AD00380833 /* FSCalendar */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00197EAF2A253D3F00C21C81 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		00197EB12A25426300C21C81 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		006CBA842A0A8FD800380833 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		006CBA862A0A8FE400380833 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		006CBA8F2A0AA54700380833 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				00B216542A17D666003ACC58 /* ScheduleModel.swift */,
+				00197EAF2A253D3F00C21C81 /* TaskModel.swift */,
+				00197EB12A25426300C21C81 /* ContactModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				00B2164B2A16BA02003ACC58 /* AlertFrendOrTeacher.swift in Sources */,
 				00B216472A16A4B7003ACC58 /* ContactsTableViewCell.swift in Sources */,
 				006CBAB52A0C22EE00380833 /* AlertForCellName.swift in Sources */,
+				00197EB02A253D3F00C21C81 /* TaskModel.swift in Sources */,
 				006CBA872A0A8FE400380833 /* TasksViewController.swift in Sources */,
 				007A8C192A0A87CF00383ACB /* SceneDelegate.swift in Sources */,
 				00B216582A17D868003ACC58 /* RealmManager.swift in Sources */,
@@ -400,6 +407,7 @@
 				006CBAA02A0AF23700380833 /* PressButtonProtocols.swift in Sources */,
 				006CBAB72A0C2B5200380833 /* ScheduleColorsViewController.swift in Sources */,
 				006CBAA42A0BE25800380833 /* ScheduleOptionTableViewController.swift in Sources */,
+				00197EB22A25426300C21C81 /* ContactModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

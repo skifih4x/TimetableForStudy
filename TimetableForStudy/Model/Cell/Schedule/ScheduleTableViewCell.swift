@@ -54,7 +54,7 @@ final class ScheduleTableViewCell: UITableViewCell {
         
         lessonName.text = model.scheduleName
         teacherName.text = model.scheduleTeacher
-        lessonTime.text = dateFormatter.string(from: model.scheduleTime)
+        lessonTime.text = dateFormatter.string(from: model.scheduleTime ?? Date())
         lessonType.text = model.scheduleType
         lessonBuilding.text = model.scheduleBuilding
         lessonAud.text = model.scheduleAudience

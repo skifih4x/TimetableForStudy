@@ -71,5 +71,17 @@ final class TasksTableViewCell: UITableViewCell {
             taskDescription.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
     }
+    
+    func configure(model: TaskModel) {
+        taskName.text = model.taskName
+        taskDescription.text = model.taskDescription
+        backgroundColor = UIColor().colorFroxHex("\(model.taskColor)")
+        
+        if model.taskReady {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
+        } else {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+        }
+    }
 }
 
