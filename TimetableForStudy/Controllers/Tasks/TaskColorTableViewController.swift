@@ -10,7 +10,7 @@ import UIKit
 final class TaskColorTableViewController: UITableViewController {
     
     let idTasksColorCell = "idTasksColorCell"
-    let idTaskScheduleHeader = "idTaskScheduleHeader "
+    let idTaskScheduleHeader = "idTaskScheduleHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
     
@@ -24,6 +24,13 @@ final class TaskColorTableViewController: UITableViewController {
         tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
     }
+    
+    private func setColors(color: String) {
+        let taskOption = self.navigationController?.viewControllers[1] as? TasksOptionTableView
+        taskOption?.hexColorCell = color
+        taskOption?.tableView.reloadRows(at: [[3,0]], with: .none)
+        self.navigationController?.popViewController(animated: true)
+     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         7
@@ -45,7 +52,20 @@ final class TaskColorTableViewController: UITableViewController {
         return header
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        30
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tap cell ")
+        switch indexPath.section {
+        case 0: setColors(color: "BE2813")
+        case 1: setColors(color: "F07F5A")//F07F5A
+        case 2: setColors(color: "F3AF22")//F3AF22
+        case 3: setColors(color: "467C24")//467C24
+        case 4: setColors(color: "2D7FC1")//2D7FC1
+        case 5: setColors(color: "1A4766")//1A4766
+        case 6: setColors(color: "2D038F")//2D038F
+        default: setColors(color: "FFFFFF")
+        }
     }
 }

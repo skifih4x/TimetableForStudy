@@ -16,6 +16,8 @@ final class TasksOptionTableView: UITableViewController {
     
     let cellNameArray = ["Date", "Lesson", "Task", ""]
     
+    var hexColorCell = "1A4766"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Option Tasks"
